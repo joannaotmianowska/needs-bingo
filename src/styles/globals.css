@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Amatic';
+    src: url('../../public/fonts/AmaticSC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Amatic-bold';
+    src: url('../../public/fonts/AmaticSC-Bold.ttf') format('truetype');
+}
+  
+@font-face {
+    font-family: 'Lora';
+    src: url('../../public/fonts/Lora-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lora-italic';
+    src: url('../../public/fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+}
