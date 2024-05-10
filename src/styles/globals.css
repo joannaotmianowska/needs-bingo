@@ -21,3 +21,13 @@
     font-family: 'Lora-italic';
     src: url('../../public/fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../../public/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nunito-italic';
+    src: url('../../public/fonts/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+}

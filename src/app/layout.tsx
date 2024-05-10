@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
-      <body className='font-extraBold text-my-green bg-my-beige leading-relaxed'>{children}</body>
+      <body className='font-text text-my-green bg-my-beige leading-relaxed'>{children}</body>
     </html>
   );
 }

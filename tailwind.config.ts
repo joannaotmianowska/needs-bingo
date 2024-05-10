@@ -6,10 +6,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        text: ['Lora', 'serif'],
-        textItalic: ['Lora-italic', 'serif'],
-        extra: ['Amatic', 'sans-serif'],
-        extraBold: ['Amatic-Bold', 'sans-serif'],
+        text: ['Nunito', 'sans-serif'],
+        textItalic: ['Nunito-italic', 'sans-serif'],
+        extra: ['Amatic', 'serif'],
+        extraBold: ['Amatic-Bold', 'serif'],
       },
       colors: {
         'my-green': '#A8B59F',

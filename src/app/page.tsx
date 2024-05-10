@@ -69,22 +69,22 @@ const mockActivities = selfCareActivities.slice(0, 9);
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col gap-6 items-center bg-gradient-to-b from-my-yellow to-my-beige text-white p-20 text-xl">
-      <h1 className="text-6xl pb-10">Zadbaj o swoje potrzeby 🧘‍♀️🌱☕️</h1>
+      <h1 className="text-8xl pb-10 font-extraBold">Zadbaj o swoje potrzeby 🧘‍♀️🌱☕️</h1>
       <div className="bg-my-green rounded-2xl p-10 shadow-xl text-center">
-        <h2 className="text-5xl pb-5">Potrzeby, o które aktualnie chcesz zadbać to:</h2>
-        <ul className="text-3xl pb-5 flex flex-row flex-wrap gap-2">
+        <h2 className="text-5xl pb-5 font-extraBold">Potrzeby, o które aktualnie chcesz zadbać to:</h2>
+        <ul className="pb-5 flex flex-row flex-wrap gap-2">
           {mockNeeds.map((need, index) => (
             <li key={`need+${index}`}>{need}</li>
           ))}
         </ul>
-        <button className="px-6 text-2xl py-3 overflow-hidden rounded-2xl bg-my-yellow shadow-xl hover:shadow-md">
+        <button className="px-6 py-3 overflow-hidden rounded-2xl bg-my-yellow shadow-xl hover:shadow-md">
           <span className="relative z-10 text-white">✏️ &nbsp; Edytuj aktualne potrzeby</span>
         </button>
       </div>
       <div className="bg-my-green rounded-2xl p-10 shadow-xl text-center">
-        <h2 className="text-8xl pb-10">Potrzebowe bingo</h2>
-        <p className="text-xl font-text">Co dziś wybierzesz? Wykreśl element klikając na niego, gdy zrealizujesz zadanie.</p>
-        <div className="bg-white rounded-lg shadow-md p-6 mb-10 mt-10 text-3xl">
+        <h2 className="text-6xl pb-10 font-extraBold">Potrzebowe bingo</h2>
+        <p className="text-xl">Co dziś wybierzesz? Wykreśl element klikając na niego, gdy zrealizujesz zadanie.</p>
+        <div className="bg-white rounded-lg shadow-md p-6 mb-10 mt-10">
           <div className="grid grid-cols-3 gap-4">
             {mockActivities.map((activity, index) => (
               <div
@@ -96,10 +96,10 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <button className="px-6 text-2xl py-3 overflow-hidden rounded-2xl bg-my-yellow shadow-xl hover:shadow-md  mb-10">
+        <button className="px-6 py-3 overflow-hidden rounded-2xl bg-my-yellow shadow-xl hover:shadow-md  mb-10">
           <span className="relative z-10 text-white">✏️ &nbsp; Edytuj bingo</span>
         </button>
-        <p className="text-xl font-text">Podziel się swoim bingo ze znajomymi!</p>
+        <p className="text-xl">Podziel się swoim bingo ze znajomymi!</p>
       </div>
     </main>
   );
