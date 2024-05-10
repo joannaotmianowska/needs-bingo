@@ -65,7 +65,6 @@ const mockNeeds = [ needs[0], needs[1], needs[2], needs[12], needs[15] ];
 const mockActivities = selfCareActivities.slice(0, 9);
 
 export default async function HomePage() {
-  headers()
   const posts = await db.query.posts.findMany();
 
   return (
