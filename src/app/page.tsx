@@ -6,7 +6,9 @@ export const dynamic = "force-dynamic";
 const mockNeeds = [ needs[0], needs[1], needs[2], needs[12], needs[15] ];
 
 export default async function HomePage() {
-  const activities = await db.query.activities.findMany();
+  const activities = await db.query.activities.findMany({
+    orderBy: (model, {desc}) => desc(model.id)
+  });
 
   return (
     <main className="flex min-h-screen flex-col gap-6 items-center bg-gradient-to-b from-my-yellow to-my-beige text-white p-20 text-xl">
