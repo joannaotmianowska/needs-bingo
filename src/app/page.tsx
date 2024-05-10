@@ -1,3 +1,5 @@
+import { db }  from '../server/db';
+
 const needs = [
   '🤗 akceptacja',
   '🛡️ bezpieczeństwo',
@@ -32,44 +34,41 @@ const needs = [
 ];
 
 const selfCareActivities = [
-  '🧘‍♀️ Medytacja i praktyki uważności',
-  '📖 Czytanie inspirujących książek lub poezji',
-  '🎨 Twórcze zajęcia, takie jak malowanie, rysowanie lub rzeźbienie',
-  '🌳 Spacery na świeżym powietrzu i kontakt z naturą',
-  '🛀 Relaksująca kąpiel z aromatycznymi olejkami',
-  '🍲 Przygotowywanie zdrowych i pożywnych posiłków',
-  '💆‍♀️ Masaż lub inne zabiegi pielęgnacyjne',
-  '🧘‍♂️ Praktyki oddechowe i relaksacyjne',
-  '🎵 Słuchanie ulubionej muzyki lub śpiewanie',
-  '🌱 Pielęgnowanie roślin lub ogródka',
-  '📝 Prowadzenie dziennika lub pisanie listów',
-  '🧶 Robótki ręczne, takie jak szydełkowanie lub hafciarstwo',
-  '🍵 Picie herbaty lub innego relaksującego napoju',
-  '🕯️ Tworzenie przytulnej atmosfery z pomocą świec i aromatów',
-  '🧖‍♀️ Wizyta w saunie lub łaźni parowej',
-  '🌞 Spędzanie czasu na świeżym powietrzu i opalanie się',
-  '🧘‍♂️ Praktyki jogi lub tai-chi',
-  '🎭 Udział w zajęciach teatralnych lub improwizacji',
-  '🎨 Malowanie lub rysowanie dla przyjemności',
-  '🏞️ Wycieczki na łono natury i obserwacja przyrody',
-  '🧘‍♀️ Praktyki uważności i medytacji',
-  '📚 Uczenie się nowych umiejętności lub hobby',
-  '🎶 Słuchanie relaksującej muzyki lub śpiewanie',
-  '💐 Otaczanie się pięknymi roślinami i kwiatami',
-  '🛀 Relaksujące kąpiele z solami lub olejkami',
-  '🧘‍♂️ Praktyki oddechowe i relaksacyjne',
-  '🍲 Przygotowywanie zdrowych i pożywnych posiłków',
-  '📖 Czytanie inspirujących książek lub poezji',
-  '🎨 Twórcze zajęcia, takie jak malowanie, rysowanie lub rzeźbienie'
+  '🧘‍♀️ Medytacja',
+  '📖 Czytanie',
+  '🎨 Twórcze zajęcia',
+  '🌳 Spacery',
+  '🛀 Relaksująca kąpiel',
+  '🍲 Dobre jedzenie',
+  '💆‍♀️ Masaż',
+  '🧘‍♂️ Praktyki oddechowe',
+  '🎵 Słuchanie muzyki',
+  '🌱 Pielęgnowanie roślin',
+  '📝 Prowadzenie dziennika',
+  '🧶 Szydełkowanie',
+  '🍵 Picie herbaty',
+  '🕯️ Zapalenie świecy',
+  '🧖‍♀️ Wizyta w saunie',
+  '🌞 Spędzanie czasu na świeżym powietrzu',
+  '🧘‍♂️ Praktyka jogi',
+  '🎭 Zajęciach teatralne lub improwizacji',
+  '🎨 Malowanie',
+  '🏞️ Wycieczka',
+  '🧘‍♀️ Praktyka uważności',
+  '📚 Uczenie się nowych umiejętności',
+  '🎶 Śpiewanie',
 ];
 
 const mockNeeds = [ needs[0], needs[1], needs[2], needs[12], needs[15] ];
 const mockActivities = selfCareActivities.slice(0, 9);
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany();
+
   return (
     <main className="flex min-h-screen flex-col gap-6 items-center bg-gradient-to-b from-my-yellow to-my-beige text-white p-20 text-xl">
       <h1 className="text-8xl pb-10 font-extraBold">Zadbaj o swoje potrzeby 🧘‍♀️🌱☕️</h1>
+      <div>{posts.map(post => <div key={post.id}>{post.name}</div>)}</div>
       <div className="bg-my-green rounded-2xl p-10 shadow-xl text-center">
         <h2 className="text-5xl pb-5 font-extraBold">Potrzeby, o które aktualnie chcesz zadbać to:</h2>
         <ul className="pb-5 flex flex-row flex-wrap gap-2">
