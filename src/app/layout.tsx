@@ -1,4 +1,6 @@
 import "~/styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import Nav from "./components/nav";
 
 export const metadata = {
   title: "Create T3 App",
@@ -12,8 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pl">
-      <body className='font-text text-my-green bg-my-beige leading-relaxed'>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="pl">
+      <body className='font-text text-my-green bg-my-beige leading-relaxed'>
+        <div className="grid h-screen grid-rows-[auto,1fr]">
+          <Nav />
+          <main className="overflow-y-scroll">{children}</main>
+        </div>
+      </body>
+      </html>
+    </ClerkProvider>
   );
 }
